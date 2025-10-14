@@ -24,4 +24,4 @@ jobs:
 
       # Step 3: Sync local repo files to S3 bucket
       - name: Deploy to S3
-        run: aws s3 sync . s3://your-bucket-name --delete --exclude ".git/*" --exclude ".github/*"
+        run: aws s3 sync . s3://justinecarzonportfolio --delete --exclude ".git/*" --exclude ".github/*"
