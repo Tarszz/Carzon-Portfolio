@@ -123,7 +123,7 @@ header {
 
 .hero-text span {
   color: var(--accent);
-  text-shadow: var(--accent-glow);
+  color: #e0f7ff;
 }
 
 .hero-text p {
@@ -200,7 +200,7 @@ section h2 {
   display: flex;
   gap: 2rem;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   flex-wrap: wrap;
   background: rgba(255, 255, 255, 0.05);
   padding: 2rem;
