@@ -1,0 +1,313 @@
+:root {
+  /* Core theme colors */
+  --bg-base: #000000;
+  --bg-gradient: radial-gradient(circle at top left, #001b33 0%, #000000 70%);
+  --text-color: #e0f7ff;
+  --accent: #00eaff;
+  --accent-glow: 0 0 10px #00eaff, 0 0 20px #00bfff, 0 0 35px #0099ff;
+  --font: 'Poppins', sans-serif;
+}
+
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-base);
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  font-family: var(--font);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  transition: background 0.4s ease;
+}
+
+/* ===== Navbar ===== */
+header {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  padding: 1rem 4rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 234, 255, 0.15);
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.05);
+  transition: 0.3s ease;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-shadow: 0 0 12px var(--accent);
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.logo:hover {
+  text-shadow: var(--accent-glow);
+  transform: scale(1.05);
+}
+
+/* Navbar links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  transition: all 0.35s ease;
+}
+
+/* Neon hover + active glow effect */
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 234, 255, 0.1);
+  opacity: 0;
+  border-radius: 6px;
+  box-shadow: none;
+  transition: all 0.35s ease;
+}
+
+.nav-links a:hover::before,
+.nav-links a.active::before {
+  opacity: 1;
+  box-shadow: 0 0 15px #00eaff, 0 0 25px #00bfff;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffffff;
+  text-shadow: 0 0 8px #00eaff, 0 0 20px #00bfff;
+  transform: scale(1.05);
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10rem 4rem 5rem;
+  flex-wrap: wrap;
+  animation: fadeInHero 1.2s ease-out forwards;
+}
+
+@keyframes fadeInHero {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero-text h2 {
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 12px rgba(0, 234, 255, 0.6);
+}
+
+.hero-text span {
+  color: var(--accent);
+  text-shadow: var(--accent-glow);
+}
+
+.hero-text p {
+  color: #b6faff;
+  max-width: 600px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.7rem 1.5rem;
+  border-radius: 4px;
+  transition: all 0.35s ease;
+  box-shadow: 0 0 5px #00eaff;
+}
+
+.btn:hover {
+  background: var(--accent);
+  color: #000;
+  box-shadow: var(--accent-glow);
+  transform: scale(1.07);
+}
+
+/* Hero image */
+.hero-img img {
+  width: 280px;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  box-shadow: var(--accent-glow);
+  animation: glowPulse 3s infinite alternate ease-in-out;
+}
+
+/* ===== Section Headings ===== */
+section h2 {
+  font-size: 1.8rem;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 15px #00eaff;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* ===== About ===== */
+.about {
+  padding: 6rem 4rem;
+  text-align: center;
+}
+
+.about p {
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 2rem;
+  color: #c9faff;
+}
+
+.about .btn:hover {
+  background: var(--accent);
+  color: #000;
+  box-shadow: var(--accent-glow);
+}
+
+/* ===== Internship ===== */
+.internship {
+  padding: 6rem 4rem;
+  background: rgba(0, 0, 0, 0.25);
+  border-top: 1px solid rgba(0, 234, 255, 0.15);
+  border-bottom: 1px solid rgba(0, 234, 255, 0.15);
+}
+
+.intern-card {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 234, 255, 0.2);
+  transition: all 0.4s ease;
+}
+
+.intern-card:hover {
+  transform: scale(1.03);
+  box-shadow: var(--accent-glow);
+}
+
+.intern-card img {
+  width: 200px;
+  border-radius: 100px;
+  border: 2px solid var(--accent);
+}
+
+/* ===== Works ===== */
+.works {
+  padding: 6rem 4rem;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(0, 234, 255, 0.2);
+  padding: 2rem;
+  border-radius: 10px;
+  transition: all 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: var(--accent-glow);
+  border-color: var(--accent);
+}
+
+.btn-secondary:hover {
+  text-shadow: var(--accent-glow);
+  border-bottom: 1px solid var(--accent);
+}
+
+/* ===== Contact ===== */
+.contact {
+  padding: 6rem 4rem;
+  text-align: center;
+}
+
+.contact a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-shadow: var(--accent-glow);
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  border: 1px solid rgba(0, 234, 255, 0.4);
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  box-shadow: var(--accent-glow);
+}
+
+.contact-form button:hover {
+  background: var(--accent);
+  color: #000;
+  box-shadow: var(--accent-glow);
+  transform: scale(1.05);
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid rgba(0, 234, 255, 0.2);
+  font-size: 0.9rem;
+  color: #aeeaff;
+  background: radial-gradient(circle at bottom, #000 60%, #001a33 100%);
+}
+
+/* ===== Keyframes ===== */
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 10px #00eaff; }
+  50% { box-shadow: 0 0 30px #00eaff, 0 0 50px #00bfff; }
+  100% { box-shadow: 0 0 10px #00eaff; }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+

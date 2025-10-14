@@ -1,0 +1,92 @@
+/* ================================
+   ANIMATIONS.CSS
+   Adds subtle UI motion and hover glow
+   ================================ */
+
+/* Fade-in base animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade-in with scale */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Glowing hover for accent elements */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px var(--accent);
+  }
+  50% {
+    box-shadow: 0 0 15px var(--accent);
+  }
+  100% {
+    box-shadow: 0 0 5px var(--accent);
+  }
+}
+
+/* Hero animation */
+.hero-text {
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+.hero-img {
+  animation: fadeInScale 1.4s ease-out forwards;
+}
+
+/* About section fade in */
+.about {
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Internship card slide-up */
+.intern-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+.intern-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Works grid cards */
+.card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.6s ease;
+}
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover glow on buttons */
+.btn:hover,
+.btn-secondary:hover {
+  animation: glow 1.5s infinite alternate;
+}
+
+/* Contact form fade-in */
+.contact-form {
+  animation: fadeInUp 1.2s ease-out;
+}
+
+/* Footer subtle entry */
+footer {
+  animation: fadeInUp 1s ease-out;
+}
