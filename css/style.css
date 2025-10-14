@@ -153,11 +153,10 @@ header {
 
 /* Hero image */
 .hero-img img {
-  width: 280px;
+  width: 200px;
   border-radius: 50%;
   border: 3px solid var(--accent);
   box-shadow: var(--accent-glow);
-  animation: glowPulse 3s infinite alternate ease-in-out;
 }
 
 /* ===== Section Headings ===== */
@@ -224,6 +223,10 @@ section h2 {
 /* ===== Works ===== */
 .works {
   padding: 6rem 4rem;
+}
+
+.works .btn-secondary {
+  color:#00bfff;
 }
 
 .works-grid {
